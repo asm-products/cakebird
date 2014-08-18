@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		592A26AE199FE8B000CC910F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A26AD199FE8B000CC910F /* AppDelegate.swift */; };
-		592A26B0199FE8B000CC910F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A26AF199FE8B000CC910F /* ViewController.swift */; };
+		592A26B0199FE8B000CC910F /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A26AF199FE8B000CC910F /* LandingViewController.swift */; };
 		592A26B3199FE8B000CC910F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 592A26B1199FE8B000CC910F /* Main.storyboard */; };
 		592A26B5199FE8B000CC910F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 592A26B4199FE8B000CC910F /* Images.xcassets */; };
 		592A26C1199FE8B000CC910F /* CakeBirdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A26C0199FE8B000CC910F /* CakeBirdTests.swift */; };
+		592A26CB19A0624700CC910F /* SuperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A26CA19A0624700CC910F /* SuperViewController.swift */; };
+		592A26D119A0648600CC910F /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A26D019A0648600CC910F /* UserManager.swift */; };
+		59E90E3B19A17A0B00CD0DB8 /* TwitterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E90E3A19A17A0B00CD0DB8 /* TwitterUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,12 +31,15 @@
 		592A26A8199FE8B000CC910F /* CakeBird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CakeBird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		592A26AC199FE8B000CC910F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		592A26AD199FE8B000CC910F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		592A26AF199FE8B000CC910F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		592A26AF199FE8B000CC910F /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		592A26B2199FE8B000CC910F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		592A26B4199FE8B000CC910F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		592A26BA199FE8B000CC910F /* CakeBirdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CakeBirdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		592A26BF199FE8B000CC910F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		592A26C0199FE8B000CC910F /* CakeBirdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeBirdTests.swift; sourceTree = "<group>"; };
+		592A26CA19A0624700CC910F /* SuperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperViewController.swift; sourceTree = "<group>"; };
+		592A26D019A0648600CC910F /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		59E90E3A19A17A0B00CD0DB8 /* TwitterUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,10 +82,12 @@
 			isa = PBXGroup;
 			children = (
 				592A26AD199FE8B000CC910F /* AppDelegate.swift */,
-				592A26AF199FE8B000CC910F /* ViewController.swift */,
-				592A26B1199FE8B000CC910F /* Main.storyboard */,
 				592A26B4199FE8B000CC910F /* Images.xcassets */,
+				592A26B1199FE8B000CC910F /* Main.storyboard */,
+				59E90E3919A179FE00CD0DB8 /* Model */,
 				592A26AB199FE8B000CC910F /* Supporting Files */,
+				592A26CE19A0633700CC910F /* UI */,
+				592A26CF19A0646C00CC910F /* Utilities */,
 			);
 			path = CakeBird;
 			sourceTree = "<group>";
@@ -107,6 +115,31 @@
 				592A26BF199FE8B000CC910F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		592A26CE19A0633700CC910F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				592A26AF199FE8B000CC910F /* LandingViewController.swift */,
+				592A26CA19A0624700CC910F /* SuperViewController.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		592A26CF19A0646C00CC910F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				592A26D019A0648600CC910F /* UserManager.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		59E90E3919A179FE00CD0DB8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				59E90E3A19A17A0B00CD0DB8 /* TwitterUser.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,7 +241,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				592A26B0199FE8B000CC910F /* ViewController.swift in Sources */,
+				59E90E3B19A17A0B00CD0DB8 /* TwitterUser.swift in Sources */,
+				592A26B0199FE8B000CC910F /* LandingViewController.swift in Sources */,
+				592A26CB19A0624700CC910F /* SuperViewController.swift in Sources */,
+				592A26D119A0648600CC910F /* UserManager.swift in Sources */,
 				592A26AE199FE8B000CC910F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,6 +364,7 @@
 				INFOPLIST_FILE = CakeBird/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -339,6 +376,7 @@
 				INFOPLIST_FILE = CakeBird/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -395,6 +433,7 @@
 				592A26C6199FE8B000CC910F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		592A26C7199FE8B000CC910F /* Build configuration list for PBXNativeTarget "CakeBirdTests" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +442,7 @@
 				592A26C9199FE8B000CC910F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
