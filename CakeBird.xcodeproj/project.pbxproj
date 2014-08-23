@@ -16,6 +16,8 @@
 		592A26C1199FE8B000CC910F /* CakeBirdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A26C0199FE8B000CC910F /* CakeBirdTests.swift */; };
 		592A26CB19A0624700CC910F /* SuperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A26CA19A0624700CC910F /* SuperViewController.swift */; };
 		592A26D119A0648600CC910F /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A26D019A0648600CC910F /* UserManager.swift */; };
+		59B2133E19A8EA2200E20EC0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B2133D19A8EA2200E20EC0 /* ProfileViewController.swift */; };
+		59E1051919A84A8900F32FED /* SwifteriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E1051819A84A8900F32FED /* SwifteriOS.framework */; };
 		59E90E3B19A17A0B00CD0DB8 /* TwitterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E90E3A19A17A0B00CD0DB8 /* TwitterUser.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +46,8 @@
 		592A26C0199FE8B000CC910F /* CakeBirdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeBirdTests.swift; sourceTree = "<group>"; };
 		592A26CA19A0624700CC910F /* SuperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperViewController.swift; sourceTree = "<group>"; };
 		592A26D019A0648600CC910F /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		59B2133D19A8EA2200E20EC0 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		59E1051819A84A8900F32FED /* SwifteriOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwifteriOS.framework; path = "Swifter/build/Debug-iphoneos/SwifteriOS.framework"; sourceTree = "<group>"; };
 		59E90E3A19A17A0B00CD0DB8 /* TwitterUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59E1051919A84A8900F32FED /* SwifteriOS.framework in Frameworks */,
 				5901686019A78EF400BE6472 /* Twitter.framework in Frameworks */,
 				5901685E19A78EEF00BE6472 /* Accounts.framework in Frameworks */,
 			);
@@ -70,6 +75,7 @@
 		592A269F199FE8B000CC910F = {
 			isa = PBXGroup;
 			children = (
+				59E1051819A84A8900F32FED /* SwifteriOS.framework */,
 				5901685F19A78EF400BE6472 /* Twitter.framework */,
 				5901685D19A78EEF00BE6472 /* Accounts.framework */,
 				592A26AA199FE8B000CC910F /* CakeBird */,
@@ -90,6 +96,7 @@
 		592A26AA199FE8B000CC910F /* CakeBird */ = {
 			isa = PBXGroup;
 			children = (
+				5901686119A7904E00BE6472 /* CakeBird-Bridging-Header.h */,
 				592A26AD199FE8B000CC910F /* AppDelegate.swift */,
 				592A26B4199FE8B000CC910F /* Images.xcassets */,
 				592A26B1199FE8B000CC910F /* Main.storyboard */,
@@ -97,7 +104,6 @@
 				592A26AB199FE8B000CC910F /* Supporting Files */,
 				592A26CE19A0633700CC910F /* UI */,
 				592A26CF19A0646C00CC910F /* Utilities */,
-				5901686119A7904E00BE6472 /* CakeBird-Bridging-Header.h */,
 			);
 			path = CakeBird;
 			sourceTree = "<group>";
@@ -132,6 +138,7 @@
 			children = (
 				592A26AF199FE8B000CC910F /* LandingViewController.swift */,
 				592A26CA19A0624700CC910F /* SuperViewController.swift */,
+				59B2133D19A8EA2200E20EC0 /* ProfileViewController.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -251,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59B2133E19A8EA2200E20EC0 /* ProfileViewController.swift in Sources */,
 				59E90E3B19A17A0B00CD0DB8 /* TwitterUser.swift in Sources */,
 				592A26B0199FE8B000CC910F /* LandingViewController.swift in Sources */,
 				592A26CB19A0624700CC910F /* SuperViewController.swift in Sources */,
@@ -372,6 +380,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Swifter/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = CakeBird/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -387,6 +399,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Swifter/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = CakeBird/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

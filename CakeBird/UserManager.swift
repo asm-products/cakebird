@@ -9,7 +9,7 @@
 import Foundation
 import Accounts
 import Twitter
-
+import SwifteriOS
 
 
 class UserManager {
@@ -18,18 +18,34 @@ class UserManager {
     struct Static {
         static var loggedIn: TwitterUser? = nil
         static var pred: dispatch_once_t = 0
+        static var swifter: Swifter? = nil
     }
     
-    class func requestAccounts(complete:([ACAccount])->Void) {
+    class func requestAccounts(complete:(NSError?, [ACAccount]?)->Void) {
         let store = ACAccountStore()
         let type = store.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
-        let accounts = store.accountsWithAccountType(type)
-
+        store.requestAccessToAccountsWithType(type, options: nil) { (granted, error) -> Void in
+            if error != nil {
+                complete(error, nil)
+            } else if granted {
+                let accounts = store.accountsWithAccountType(type) as [ACAccount]
+                complete(nil, accounts)
+            } else {
+                complete(nil, nil)
+            }
+            
+            
+        }
+        
+        
     }
     
-    class func loginWithAccount(account: ACAccount, complete:()->Void) {
+    class func loginWithAccount(account: ACAccount, complete:(NSError?)->Void) {
+        Static.swifter = Swifter(account: account)
+        Static.loggedIn = TwitterUser(swifter: Static.swifter!, account: account) { () in
+            complete(nil)
+        }
 
-        
     }
     
     class func loginFallback() {
@@ -52,6 +68,7 @@ class UserManager {
                 let data: NSData? = defaults.objectForKey("userObject") as? NSData
                 if let liveData = data {
                     Static.loggedIn = NSKeyedUnarchiver.unarchiveObjectWithData(liveData) as? TwitterUser
+                    Static.swifter = Swifter(account: Static.loggedIn!.account)
                 } else {
                     Static.loggedIn = nil
                 }
@@ -61,8 +78,8 @@ class UserManager {
             } else {
                 return nil
             }
-
-
+            
+            
         }
     }
     
