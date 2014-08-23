@@ -13,15 +13,7 @@ import Accounts
 class LandingViewController: SuperViewController {
                             
     override func viewDidLoad() {
-        super.viewDidLoad()
-        if let user = UserManager.sharedInstance() {
-            println(user)
-            UserManager.logout()
-        } else {
-            self.loginToTwitter()
-        }
-        
-        // Do any additional setup after loading the view, typically from a nib.
+      
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,15 +23,7 @@ class LandingViewController: SuperViewController {
 
     func loginToTwitter() {
 
-        UserManager.requestAccounts() { (accounts:Array<ACAccount!>) in
-            println(accounts)
-            UserManager.loginWithAccount(accounts[0]) {
-                println("done")
-                if let user = UserManager.sharedInstance() {
-                    println(user)
-                }
-            }
-        }
+       
     }
     
 

@@ -20,39 +20,16 @@ class UserManager {
         static var pred: dispatch_once_t = 0
     }
     
-    class func requestAccounts(complete:(Array<ACAccount!>)->Void) {
+    class func requestAccounts(complete:([ACAccount])->Void) {
         let store = ACAccountStore()
-        let twitterType = ACAccountTypeIdentifierTwitter
-        let type = store.accountTypeWithAccountTypeIdentifier(twitterType)
-        let completion: ACAccountStoreRemoveCompletionHandler = {(granted: Bool, error: NSError!) -> Void in
-            println("\(granted) \(error)")
-            if granted {
-                let accounts = store.accountsWithAccountType(type) as Array<ACAccount!>
-                complete(accounts)
-                
-            } else {
-                println("Not granted!")
-            }
-        }
-        
-        store.requestAccessToAccountsWithType(type, options: nil, completion: completion)
-        
-        
-        
+        let type = store.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
+        let accounts = store.accountsWithAccountType(type)
+
     }
     
     class func loginWithAccount(account: ACAccount, complete:()->Void) {
-        println(account)
-        Static.loggedIn = TwitterUser(account: account)
-        saveUser()
-        complete()
+
         
-    }
-    
-    class func saveUser() {
-        let data = NSKeyedArchiver.archivedDataWithRootObject(Static.loggedIn)
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(data, forKey: "userObject")
     }
     
     class func loginFallback() {
@@ -61,7 +38,7 @@ class UserManager {
     
     class func logout() {
         let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(nil, forKey: "userObject")
+        defaults.removeObjectForKey("userObject")
         Static.loggedIn = nil
     }
     
@@ -87,5 +64,11 @@ class UserManager {
 
 
         }
+    }
+    
+    class func saveUser() {
+        let data = NSKeyedArchiver.archivedDataWithRootObject(Static.loggedIn!)
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(data, forKey: "userObject")
     }
 }

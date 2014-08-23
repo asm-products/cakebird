@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5901685E19A78EEF00BE6472 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5901685D19A78EEF00BE6472 /* Accounts.framework */; };
+		5901686019A78EF400BE6472 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5901685F19A78EF400BE6472 /* Twitter.framework */; };
 		592A26AE199FE8B000CC910F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A26AD199FE8B000CC910F /* AppDelegate.swift */; };
 		592A26B0199FE8B000CC910F /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A26AF199FE8B000CC910F /* LandingViewController.swift */; };
 		592A26B3199FE8B000CC910F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 592A26B1199FE8B000CC910F /* Main.storyboard */; };
@@ -28,6 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5901685D19A78EEF00BE6472 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		5901685F19A78EF400BE6472 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		5901686119A7904E00BE6472 /* CakeBird-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CakeBird-Bridging-Header.h"; sourceTree = "<group>"; };
 		592A26A8199FE8B000CC910F /* CakeBird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CakeBird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		592A26AC199FE8B000CC910F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		592A26AD199FE8B000CC910F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5901686019A78EF400BE6472 /* Twitter.framework in Frameworks */,
+				5901685E19A78EEF00BE6472 /* Accounts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +70,8 @@
 		592A269F199FE8B000CC910F = {
 			isa = PBXGroup;
 			children = (
+				5901685F19A78EF400BE6472 /* Twitter.framework */,
+				5901685D19A78EEF00BE6472 /* Accounts.framework */,
 				592A26AA199FE8B000CC910F /* CakeBird */,
 				592A26BD199FE8B000CC910F /* CakeBirdTests */,
 				592A26A9199FE8B000CC910F /* Products */,
@@ -88,6 +97,7 @@
 				592A26AB199FE8B000CC910F /* Supporting Files */,
 				592A26CE19A0633700CC910F /* UI */,
 				592A26CF19A0646C00CC910F /* Utilities */,
+				5901686119A7904E00BE6472 /* CakeBird-Bridging-Header.h */,
 			);
 			path = CakeBird;
 			sourceTree = "<group>";
@@ -361,9 +371,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CakeBird/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CakeBird/CakeBird-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -373,9 +386,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CakeBird/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CakeBird/CakeBird-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
