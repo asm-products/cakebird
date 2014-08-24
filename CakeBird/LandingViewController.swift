@@ -30,20 +30,24 @@ class LandingViewController: SuperViewController {
                 } else if let accountsUnwrap = accounts {
                     println(accountsUnwrap)
                     UserManager.loginWithAccount(accountsUnwrap[0], complete: { (error) -> Void in
-                        self.pushProfile()
+                        self.pushStream()
                     })
                 } else {
                     println("not granted")
                 }
             }
         } else {
-            self.pushProfile()
+            pushStream()
         }
         
     }
     
     func pushProfile() {
-       performSegueWithIdentifier("landingToProfile", sender: self)
+        performSegueWithIdentifier("landingToProfile", sender: self)
+    }
+    
+    func pushStream() {
+        performSegueWithIdentifier("landingToStream", sender: self)
     }
     
 }

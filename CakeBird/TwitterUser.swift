@@ -44,7 +44,6 @@ class TwitterUser : NSObject {
         swifter.getUsersShowWithScreenName(account.username, includeEntities: true, success: { (user) -> Void in
             if let unwrappedUser = user {
                 self.userObject = user
-                println(user!)
                 self.location = unwrappedUser["location"]!.string
                 self.favorites = unwrappedUser["favourites_count"]!.integer
                 self.bio = unwrappedUser["description"]!.string
@@ -57,7 +56,6 @@ class TwitterUser : NSObject {
                 self.following = unwrappedUser["friends_count"]!.integer
                 self.followers = unwrappedUser["followers_count"]!.integer
                 self.language = unwrappedUser["lang"]!.string
-                println(self.description())
                 callback()
             } else {
                 println("EXTREME ERROR")
@@ -66,6 +64,15 @@ class TwitterUser : NSObject {
             println("ERROR: \(error)")
         }
     }
+    
+    func getUserStream(callback:(error: NSError!, jsonTweets: [[String:SwifteriOS.JSONValue]])->Void) {
+        swifter.getStatusesHomeTimelineWithCount(20, sinceID: nil, maxID: nil, trimUser: true, contributorDetails: true, includeEntities: true, success: { (statuses) -> Void in
+            println(statuses)
+        }) { (error) -> Void in
+            println(error)
+        }
+    }
+    
    
     func description() -> String {
         if let h = handle {

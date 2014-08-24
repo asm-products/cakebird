@@ -16,7 +16,10 @@
 		592A26C1199FE8B000CC910F /* CakeBirdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A26C0199FE8B000CC910F /* CakeBirdTests.swift */; };
 		592A26CB19A0624700CC910F /* SuperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A26CA19A0624700CC910F /* SuperViewController.swift */; };
 		592A26D119A0648600CC910F /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A26D019A0648600CC910F /* UserManager.swift */; };
+		5941920419A9527900CF43FA /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5941920319A9527900CF43FA /* Tweet.swift */; };
 		59B2133E19A8EA2200E20EC0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B2133D19A8EA2200E20EC0 /* ProfileViewController.swift */; };
+		59C9ACA419A94D44008FCC3D /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C9ACA319A94D44008FCC3D /* StreamViewController.swift */; };
+		59C9ACA619A95137008FCC3D /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C9ACA519A95137008FCC3D /* TweetCell.swift */; };
 		59E1051919A84A8900F32FED /* SwifteriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E1051819A84A8900F32FED /* SwifteriOS.framework */; };
 		59E90E3B19A17A0B00CD0DB8 /* TwitterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E90E3A19A17A0B00CD0DB8 /* TwitterUser.swift */; };
 /* End PBXBuildFile section */
@@ -46,7 +49,10 @@
 		592A26C0199FE8B000CC910F /* CakeBirdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeBirdTests.swift; sourceTree = "<group>"; };
 		592A26CA19A0624700CC910F /* SuperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperViewController.swift; sourceTree = "<group>"; };
 		592A26D019A0648600CC910F /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		5941920319A9527900CF43FA /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		59B2133D19A8EA2200E20EC0 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		59C9ACA319A94D44008FCC3D /* StreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamViewController.swift; sourceTree = "<group>"; };
+		59C9ACA519A95137008FCC3D /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		59E1051819A84A8900F32FED /* SwifteriOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwifteriOS.framework; path = "Swifter/build/Debug-iphoneos/SwifteriOS.framework"; sourceTree = "<group>"; };
 		59E90E3A19A17A0B00CD0DB8 /* TwitterUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,8 +143,10 @@
 			isa = PBXGroup;
 			children = (
 				592A26AF199FE8B000CC910F /* LandingViewController.swift */,
-				592A26CA19A0624700CC910F /* SuperViewController.swift */,
 				59B2133D19A8EA2200E20EC0 /* ProfileViewController.swift */,
+				59C9ACA319A94D44008FCC3D /* StreamViewController.swift */,
+				592A26CA19A0624700CC910F /* SuperViewController.swift */,
+				59C9ACA519A95137008FCC3D /* TweetCell.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -155,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				59E90E3A19A17A0B00CD0DB8 /* TwitterUser.swift */,
+				5941920319A9527900CF43FA /* Tweet.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -261,9 +270,12 @@
 				59B2133E19A8EA2200E20EC0 /* ProfileViewController.swift in Sources */,
 				59E90E3B19A17A0B00CD0DB8 /* TwitterUser.swift in Sources */,
 				592A26B0199FE8B000CC910F /* LandingViewController.swift in Sources */,
+				5941920419A9527900CF43FA /* Tweet.swift in Sources */,
+				59C9ACA619A95137008FCC3D /* TweetCell.swift in Sources */,
 				592A26CB19A0624700CC910F /* SuperViewController.swift in Sources */,
 				592A26D119A0648600CC910F /* UserManager.swift in Sources */,
 				592A26AE199FE8B000CC910F /* AppDelegate.swift in Sources */,
+				59C9ACA419A94D44008FCC3D /* StreamViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
