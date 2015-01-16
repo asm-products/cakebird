@@ -24,18 +24,17 @@ class StreamViewController: SuperViewController, UICollectionViewDataSource, UIC
         }
         
     }
-    
-    
-    func collectionView(collectionView: UICollectionView!, cellForItemAtIndexPath indexPath: NSIndexPath!) -> UICollectionViewCell! {
-        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("tweet", forIndexPath: indexPath) as TweetCell
-        return cell
-    }
-    
-    func collectionView(collectionView: UICollectionView!, numberOfItemsInSection section: Int) -> Int {
+
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let t = tweets {
             return t.count
         }
         return 0
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("tweet", forIndexPath: indexPath) as TweetCell
+        return cell
     }
     
     

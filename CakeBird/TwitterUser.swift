@@ -47,8 +47,8 @@ class TwitterUser : NSObject {
                 self.location = unwrappedUser["location"]!.string
                 self.favorites = unwrappedUser["favourites_count"]!.integer
                 self.bio = unwrappedUser["description"]!.string
-                self.profileImage = UIImage(data: NSData(contentsOfURL: NSURL(string: unwrappedUser["profile_image_url_https"]!.string!)))
-                self.bannerImage = UIImage(data: NSData(contentsOfURL: NSURL(string: unwrappedUser["profile_banner_url"]!.string!)))
+//                self.profileImage = UIImage(data: NSData(contentsOfURL: NSURL(string: unwrappedUser["profile_image_url_https"]!.string!)))
+//                self.bannerImage = UIImage(data: NSData(contentsOfURL: NSURL(string: unwrappedUser["profile_banner_url"]!.string!)))
                 self.name = unwrappedUser["name"]!.string
                 self.handle = unwrappedUser["screen_name"]!.string
                 self.timeZone = unwrappedUser["time_zone"]!.string
