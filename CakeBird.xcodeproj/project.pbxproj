@@ -20,8 +20,10 @@
 		59B2133E19A8EA2200E20EC0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B2133D19A8EA2200E20EC0 /* ProfileViewController.swift */; };
 		59C9ACA419A94D44008FCC3D /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C9ACA319A94D44008FCC3D /* StreamViewController.swift */; };
 		59C9ACA619A95137008FCC3D /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C9ACA519A95137008FCC3D /* TweetCell.swift */; };
-		59E1051919A84A8900F32FED /* SwifteriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E1051819A84A8900F32FED /* SwifteriOS.framework */; };
 		59E90E3B19A17A0B00CD0DB8 /* TwitterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E90E3A19A17A0B00CD0DB8 /* TwitterUser.swift */; };
+		59FD15C71A87C40F00219721 /* SwifteriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59FD15C41A87C2FF00219721 /* SwifteriOS.framework */; };
+		59FD15C81A87C40F00219721 /* SwifteriOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 59FD15C41A87C2FF00219721 /* SwifteriOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		59FD15CB1A87C48700219721 /* LoginLandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FD15CA1A87C48700219721 /* LoginLandingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,20 @@
 			remoteInfo = CakeBird;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		59FD15C91A87C40F00219721 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				59FD15C81A87C40F00219721 /* SwifteriOS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5901685D19A78EEF00BE6472 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -53,8 +69,9 @@
 		59B2133D19A8EA2200E20EC0 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		59C9ACA319A94D44008FCC3D /* StreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamViewController.swift; sourceTree = "<group>"; };
 		59C9ACA519A95137008FCC3D /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
-		59E1051819A84A8900F32FED /* SwifteriOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwifteriOS.framework; path = "Swifter/build/Debug-iphoneos/SwifteriOS.framework"; sourceTree = "<group>"; };
 		59E90E3A19A17A0B00CD0DB8 /* TwitterUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterUser.swift; sourceTree = "<group>"; };
+		59FD15C41A87C2FF00219721 /* SwifteriOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwifteriOS.framework; path = "../../Library/Developer/Xcode/DerivedData/CakeBird-gmwjalifkviyhhhknkjttubreylj/Build/Products/Debug-iphoneos/SwifteriOS.framework"; sourceTree = "<group>"; };
+		59FD15CA1A87C48700219721 /* LoginLandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginLandingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +79,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59E1051919A84A8900F32FED /* SwifteriOS.framework in Frameworks */,
 				5901686019A78EF400BE6472 /* Twitter.framework in Frameworks */,
 				5901685E19A78EEF00BE6472 /* Accounts.framework in Frameworks */,
+				59FD15C71A87C40F00219721 /* SwifteriOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +98,7 @@
 		592A269F199FE8B000CC910F = {
 			isa = PBXGroup;
 			children = (
-				59E1051819A84A8900F32FED /* SwifteriOS.framework */,
+				59FD15C41A87C2FF00219721 /* SwifteriOS.framework */,
 				5901685F19A78EF400BE6472 /* Twitter.framework */,
 				5901685D19A78EEF00BE6472 /* Accounts.framework */,
 				592A26AA199FE8B000CC910F /* CakeBird */,
@@ -147,6 +164,7 @@
 				59C9ACA319A94D44008FCC3D /* StreamViewController.swift */,
 				592A26CA19A0624700CC910F /* SuperViewController.swift */,
 				59C9ACA519A95137008FCC3D /* TweetCell.swift */,
+				59FD15CA1A87C48700219721 /* LoginLandingViewController.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -178,6 +196,7 @@
 				592A26A4199FE8B000CC910F /* Sources */,
 				592A26A5199FE8B000CC910F /* Frameworks */,
 				592A26A6199FE8B000CC910F /* Resources */,
+				59FD15C91A87C40F00219721 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -217,6 +236,7 @@
 				TargetAttributes = {
 					592A26A7199FE8B000CC910F = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 9P849B5QJR;
 					};
 					592A26B9199FE8B000CC910F = {
 						CreatedOnToolsVersion = 6.0;
@@ -269,6 +289,7 @@
 			files = (
 				59B2133E19A8EA2200E20EC0 /* ProfileViewController.swift in Sources */,
 				59E90E3B19A17A0B00CD0DB8 /* TwitterUser.swift in Sources */,
+				59FD15CB1A87C48700219721 /* LoginLandingViewController.swift in Sources */,
 				592A26B0199FE8B000CC910F /* LandingViewController.swift in Sources */,
 				5941920419A9527900CF43FA /* Tweet.swift in Sources */,
 				59C9ACA619A95137008FCC3D /* TweetCell.swift in Sources */,
@@ -392,9 +413,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Swifter/build/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/CakeBird-gmwjalifkviyhhhknkjttubreylj/Build/Products/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = CakeBird/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -411,9 +434,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Swifter/build/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/CakeBird-gmwjalifkviyhhhknkjttubreylj/Build/Products/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = CakeBird/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

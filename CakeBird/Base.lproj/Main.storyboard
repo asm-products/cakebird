@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D72i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Landing View Controller-->
@@ -33,8 +34,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="9N8-RI-se9" kind="presentation" identifier="landingToProfile" modalTransitionStyle="crossDissolve" id="csB-1o-Uzl"/>
-                        <segue destination="RoU-PB-Ks3" kind="presentation" identifier="landingToStream" modalTransitionStyle="crossDissolve" id="ICt-pj-xIT"/>
+                        <segue destination="k9r-B0-5cP" kind="presentation" identifier="loadLogin" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Q1u-Q7-GMF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -92,7 +92,89 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rF6-ch-S6e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="429" y="201"/>
+            <point key="canvasLocation" x="681" y="1157"/>
+        </scene>
+        <!--Login Landing View Controller-->
+        <scene sceneID="hRK-GR-lUG">
+            <objects>
+                <viewController id="k9r-B0-5cP" customClass="LoginLandingViewController" customModule="CakeBird" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7GZ-XY-PsZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="7oC-KC-Agw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3wt-nh-4WX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to CakeBird!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CG3-U9-lex">
+                                <rect key="frame" x="187" y="20" width="225.5" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="wbh-HS-O6U"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QW0-Qg-4AY">
+                                <rect key="frame" x="16" y="524" width="136" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="IEl-KI-Qz1"/>
+                                    <constraint firstAttribute="width" constant="136" id="spL-HL-mFD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <state key="normal" title="Use iOS credentials">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="useIOSCredentials:" destination="k9r-B0-5cP" eventType="touchUpInside" id="Vmv-XS-h3W"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSs-uy-83j">
+                                <rect key="frame" x="445" y="524" width="139" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="67e-54-9TA"/>
+                                    <constraint firstAttribute="width" constant="139" id="sPj-o9-qZE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <state key="normal" title="Use web credentials">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="useWebCredentials:" destination="k9r-B0-5cP" eventType="touchUpInside" id="2Ch-ja-wWp"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please sign in to Twitter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3L-Yf-taN">
+                                <rect key="frame" x="215" y="96" width="171" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="2Zc-S1-DbL"/>
+                                    <constraint firstAttribute="width" constant="171" id="PIh-qg-Irc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.25882352941176473" green="0.20784313725490197" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="CG3-U9-lex" secondAttribute="centerX" constant="0.25" id="4qj-cZ-Rpm"/>
+                            <constraint firstItem="QW0-Qg-4AY" firstAttribute="baseline" secondItem="iSs-uy-83j" secondAttribute="baseline" id="FPe-cl-2TU"/>
+                            <constraint firstItem="7oC-KC-Agw" firstAttribute="top" secondItem="iSs-uy-83j" secondAttribute="bottom" constant="46" id="Kz7-Wg-oNI"/>
+                            <constraint firstItem="iSs-uy-83j" firstAttribute="trailing" secondItem="3wt-nh-4WX" secondAttribute="trailingMargin" id="MHh-BD-mft"/>
+                            <constraint firstItem="CG3-U9-lex" firstAttribute="top" secondItem="7GZ-XY-PsZ" secondAttribute="bottom" id="QV8-ot-6mb"/>
+                            <constraint firstItem="QW0-Qg-4AY" firstAttribute="leading" secondItem="3wt-nh-4WX" secondAttribute="leadingMargin" id="SZ6-D1-3GL"/>
+                            <constraint firstAttribute="centerX" secondItem="l3L-Yf-taN" secondAttribute="centerX" id="aW4-Yz-Aqd"/>
+                            <constraint firstItem="l3L-Yf-taN" firstAttribute="top" secondItem="CG3-U9-lex" secondAttribute="bottom" constant="22" id="lD8-PO-wns"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="RoU-PB-Ks3" kind="presentation" identifier="landingToStream" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="5fH-5n-cP5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qLK-cr-vFJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="681" y="201"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="MUl-jV-eDj">
@@ -191,7 +273,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HTb-Zr-N3v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-287" y="937"/>
+            <point key="canvasLocation" x="-155" y="1157"/>
         </scene>
     </scenes>
 </document>
