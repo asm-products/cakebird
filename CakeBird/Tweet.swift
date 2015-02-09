@@ -10,10 +10,13 @@ import Foundation
 import SwifteriOS
 
 class Tweet {
-    var author: TwitterUser?
-    var text: String?
-    
-    init(jsonTweet: [String: SwifteriOS.JSONValue]) {
-        println(jsonTweet)
-    }
+  var author: String?
+  var text: String?
+  var urls: [String]?
+  
+  init(jsonTweet: JSON) {
+    println(jsonTweet)
+    text = jsonTweet["text"].string!
+//    author = jsonTweet["user"]["id_str"]
+  }
 }

@@ -10,7 +10,17 @@ import Foundation
 import UIKit
 
 class TweetCell : UICollectionViewCell {
-    @IBOutlet weak var avatarImage: UIImageView!
-    
-    
+
+  
+  required init(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)    
+  }
+  @IBOutlet weak var avatarImage: UIImageView!
+  @IBOutlet weak var text: UILabel!
+  
+
+
+
+  
+  
 }

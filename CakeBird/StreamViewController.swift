@@ -11,31 +11,52 @@ import UIKit
 import SwifteriOS
 
 class StreamViewController: SuperViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+  
+  @IBOutlet weak var tweetStream: UICollectionView!
+  var tweets: [Tweet] = [Tweet]()
+  
+  
+  
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
     
-    @IBOutlet weak var tweetStream: UICollectionView!
-    var tweets: [Tweet]?
     
-    override func viewWillAppear(animated: Bool) {
-        if let user = UserManager.sharedInstance(){
-            user.getUserStream({ (error, jsonTweets) -> Void in
-                println(error)
-                println(jsonTweets)
-            })
+  }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    if let user = UserManager.sharedInstance(){
+      user.getUserStream({ (error, jsonTweets) -> Void in
+        if error != nil {
+          println(error)
         }
-        
+        if let jTweets = jsonTweets {
+          for jsonTweet in jTweets {
+            
+            self.tweets.append(Tweet(jsonTweet: jsonTweet))
+            
+          }
+        }
+        self.tweetStream.reloadData()
+      })
     }
+    
+  }
+  
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
 
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let t = tweets {
-            return t.count
-        }
-        return 0
-    }
-    
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("tweet", forIndexPath: indexPath) as TweetCell
-        return cell
-    }
-    
-    
+  }
+  func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+      return tweets.count
+  }
+  
+  func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    var cell = collectionView.dequeueReusableCellWithReuseIdentifier("tweet", forIndexPath: indexPath) as TweetCell
+
+    cell.text.text = tweets[indexPath.item].text
+
+    return cell
+  }
+  
+  
 }
