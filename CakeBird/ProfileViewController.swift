@@ -28,8 +28,8 @@ class ProfileViewController : SuperViewController {
             tweetsLabel.text = "Tweets: \(user.tweets!)"
             followingLabel.text = "Following: \(user.following!)"
             followersLabel.text = "Followers: \(user.followers!)"
-            profileImage.image = user.profileImage!
-            bannerImage.image = user.bannerImage!
+//            profileImage.image = user.profileImage!
+//            bannerImage.image = user.bannerImage!
         } else {
             self.dismissViewControllerAnimated(true, completion: nil)
         }

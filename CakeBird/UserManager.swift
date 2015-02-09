@@ -13,79 +13,81 @@ import SwifteriOS
 
 
 class UserManager {
-    
-    
-    struct Static {
-        static var loggedIn: TwitterUser? = nil
-        static var pred: dispatch_once_t = 0
-        static var swifter: Swifter? = nil
+  
+  
+  struct Static {
+    static var loggedIn: TwitterUser? = nil
+    static var pred: dispatch_once_t = 0
+    static var swifter: Swifter? = nil
+  }
+  
+  class func requestAccounts(complete:(NSError?, [ACAccount]?)->Void) {
+    let store = ACAccountStore()
+    let type = store.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
+    store.requestAccessToAccountsWithType(type, options: nil) { (granted, error) -> Void in
+      if error != nil {
+        complete(error, nil)
+      } else if granted {
+        let accounts = store.accountsWithAccountType(type) as [ACAccount]
+        complete(nil, accounts)
+      } else {
+        complete(nil, nil)
+      }
+      
+      
     }
     
-    class func requestAccounts(complete:(NSError?, [ACAccount]?)->Void) {
-        let store = ACAccountStore()
-        let type = store.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
-        store.requestAccessToAccountsWithType(type, options: nil) { (granted, error) -> Void in
-            if error != nil {
-                complete(error, nil)
-            } else if granted {
-                let accounts = store.accountsWithAccountType(type) as [ACAccount]
-                complete(nil, accounts)
-            } else {
-                complete(nil, nil)
-            }
-            
-            
-        }
-        
-        
+    
+  }
+  
+  class func loginWithAccount(account: ACAccount, complete:(NSError?)->Void) {
+    Static.swifter = Swifter(account: account)
+    Static.loggedIn = TwitterUser(swifter: Static.swifter!, account: account) { () in
+      complete(nil)
+      self.saveUser()
     }
     
-    class func loginWithAccount(account: ACAccount, complete:(NSError?)->Void) {
-        Static.swifter = Swifter(account: account)
-        Static.loggedIn = TwitterUser(swifter: Static.swifter!, account: account) { () in
-            complete(nil)
-        }
-
-    }
+  }
+  
+  class func loginFallback() {
     
-    class func loginFallback() {
-        
-    }
-    
-    class func logout() {
+  }
+  
+  class func logout() {
+    let defaults = NSUserDefaults.standardUserDefaults()
+    defaults.removeObjectForKey("userObject")
+    Static.loggedIn = nil
+  }
+  
+  
+  class func sharedInstance() -> TwitterUser? {
+    if let user = Static.loggedIn {
+      return user
+    } else {
+      dispatch_once(&Static.pred) {
         let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.removeObjectForKey("userObject")
-        Static.loggedIn = nil
-    }
-    
-    
-    class func sharedInstance() -> TwitterUser? {
-        if let user = Static.loggedIn {
-            return user
+        let data: NSData? = defaults.objectForKey("userObject") as? NSData
+        if let liveData = data {
+          Static.loggedIn = NSKeyedUnarchiver.unarchiveObjectWithData(liveData) as? TwitterUser
+          Static.swifter = Swifter(account: Static.loggedIn!.account)
         } else {
-            dispatch_once(&Static.pred) {
-                let defaults = NSUserDefaults.standardUserDefaults()
-                let data: NSData? = defaults.objectForKey("userObject") as? NSData
-                if let liveData = data {
-                    Static.loggedIn = NSKeyedUnarchiver.unarchiveObjectWithData(liveData) as? TwitterUser
-                    Static.swifter = Swifter(account: Static.loggedIn!.account)
-                } else {
-                    Static.loggedIn = nil
-                }
-            }
-            if let user = Static.loggedIn {
-                return user
-            } else {
-                return nil
-            }
-            
-            
+          Static.loggedIn = nil
         }
+      }
+      if let user = Static.loggedIn {
+        return user
+      } else {
+        return nil
+      }
+      
+      
     }
-    
-    class func saveUser() {
-        let data = NSKeyedArchiver.archivedDataWithRootObject(Static.loggedIn!)
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(data, forKey: "userObject")
-    }
+  }
+  
+  
+  class func saveUser() {
+    let data = NSKeyedArchiver.archivedDataWithRootObject(Static.loggedIn!)
+    let defaults = NSUserDefaults.standardUserDefaults()
+    defaults.setObject(data, forKey: "userObject")
+  }
 }

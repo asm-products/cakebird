@@ -35,6 +35,7 @@
                     </view>
                     <connections>
                         <segue destination="k9r-B0-5cP" kind="presentation" identifier="loadLogin" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Q1u-Q7-GMF"/>
+                        <segue destination="RoU-PB-Ks3" kind="presentation" identifier="loadStream" modalTransitionStyle="crossDissolve" id="We2-HG-DOV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -57,7 +58,7 @@
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" red="0.3315372285" green="0.33351492560000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="w1r-lY-1Ov">
-                                    <size key="itemSize" width="466.5" height="150"/>
+                                    <size key="itemSize" width="300.5" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -67,14 +68,11 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="466.5" height="150"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300.5" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ysh-Nu-GvY">
-                                                    <rect key="frame" x="8" y="8" width="64.5" height="65"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqd-RG-X9D">
-                                                    <rect key="frame" x="92" y="8" width="374.5" height="134"/>
+                                                    <rect key="frame" x="8" y="8" width="292.5" height="134"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -87,10 +85,9 @@
                                             <constraint firstItem="gqd-RG-X9D" firstAttribute="bottom" secondItem="6zm-Eu-cTt" secondAttribute="bottomMargin" id="H8f-Wp-Rq5"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="gqd-RG-X9D" secondAttribute="trailing" constant="-8" id="Qhe-01-Ddd"/>
                                             <constraint firstItem="gqd-RG-X9D" firstAttribute="top" secondItem="6zm-Eu-cTt" secondAttribute="topMargin" id="WX6-yp-zUa"/>
-                                            <constraint firstItem="gqd-RG-X9D" firstAttribute="leading" secondItem="6zm-Eu-cTt" secondAttribute="leadingMargin" constant="84" id="fcm-Ay-1FM"/>
+                                            <constraint firstItem="gqd-RG-X9D" firstAttribute="leading" secondItem="6zm-Eu-cTt" secondAttribute="leadingMargin" id="fcm-Ay-1FM"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="avatarImage" destination="ysh-Nu-GvY" id="3K2-Zv-kvb"/>
                                             <outlet property="text" destination="gqd-RG-X9D" id="I6x-lh-ub7"/>
                                         </connections>
                                     </collectionViewCell>
@@ -115,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rF6-ch-S6e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="681" y="1157"/>
+            <point key="canvasLocation" x="598" y="1157"/>
         </scene>
         <!--Login Landing View Controller-->
         <scene sceneID="hRK-GR-lUG">
@@ -299,4 +296,7 @@
             <point key="canvasLocation" x="-155" y="1157"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="We2-HG-DOV"/>
+    </inferredMetricsTieBreakers>
 </document>

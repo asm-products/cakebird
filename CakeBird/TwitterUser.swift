@@ -21,8 +21,8 @@ class TwitterUser : NSObject {
   var location: String?
   var favorites: Int?
   var bio: String?
-  var profileImage: UIImage?
-  var bannerImage: UIImage?
+//  var profileImage: UIImage?
+//  var bannerImage: UIImage?
   var name: String?
   var handle: String?
   var timeZone: String?
@@ -85,13 +85,11 @@ class TwitterUser : NSObject {
   
   func encodeWithCoder(coder: NSCoder) {
     coder.encodeObject(account, forKey: "account")
-    coder.encodeObject(swifter, forKey: "swifter")
-    //        coder.encodeObject(userObject, forKey: "sdklfj")
     coder.encodeObject(location!, forKey: "location")
     coder.encodeObject(favorites!, forKey: "favorites")
     coder.encodeObject(bio!, forKey: "bio")
-    coder.encodeObject(profileImage!, forKey: "profileImage")
-    coder.encodeObject(bannerImage!, forKey: "bannerImage")
+//    coder.encodeObject(profileImage!, forKey: "profileImage")
+//    coder.encodeObject(bannerImage!, forKey: "bannerImage")
     coder.encodeObject(name!, forKey: "name")
     coder.encodeObject(handle!, forKey: "handle")
     coder.encodeObject(timeZone!, forKey: "timeZone")
@@ -103,13 +101,12 @@ class TwitterUser : NSObject {
   
   init(coder: NSCoder) {
     self.account = coder.decodeObjectForKey("account") as ACAccount
-    self.swifter = coder.decodeObjectForKey("swifter") as Swifter
-    //        self.userObject = coder.decodeObjectForKey("userObject") as? [String: SwifteriOS.JSONValue]
+    self.swifter = Swifter(account: self.account)
     self.location = coder.decodeObjectForKey("location") as? String
     self.favorites = coder.decodeObjectForKey("favorites") as? Int
     self.bio = coder.decodeObjectForKey("bio") as? String
-    self.profileImage = coder.decodeObjectForKey("profileImage") as? UIImage
-    self.bannerImage = coder.decodeObjectForKey("bannerImage") as? UIImage
+//    self.profileImage = coder.decodeObjectForKey("profileImage") as? UIImage
+//    self.bannerImage = coder.decodeObjectForKey("bannerImage") as? UIImage
     self.name = coder.decodeObjectForKey("name") as? String
     self.handle = coder.decodeObjectForKey("handle") as? String
     self.timeZone = coder.decodeObjectForKey("timeZone") as? String

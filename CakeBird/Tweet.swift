@@ -15,8 +15,7 @@ class Tweet {
   var urls: [String]?
   
   init(jsonTweet: JSON) {
-    println(jsonTweet)
     text = jsonTweet["text"].string!
-//    author = jsonTweet["user"]["id_str"]
+  
   }
 }
