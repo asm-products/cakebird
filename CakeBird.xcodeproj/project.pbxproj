@@ -20,6 +20,7 @@
 		59B2133E19A8EA2200E20EC0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B2133D19A8EA2200E20EC0 /* ProfileViewController.swift */; };
 		59C9ACA419A94D44008FCC3D /* StreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C9ACA319A94D44008FCC3D /* StreamViewController.swift */; };
 		59C9ACA619A95137008FCC3D /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C9ACA519A95137008FCC3D /* TweetCell.swift */; };
+		59D82CA31A89DC7900C52294 /* WebHolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D82CA21A89DC7900C52294 /* WebHolderViewController.swift */; };
 		59E90E3B19A17A0B00CD0DB8 /* TwitterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E90E3A19A17A0B00CD0DB8 /* TwitterUser.swift */; };
 		59FD15C71A87C40F00219721 /* SwifteriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59FD15C41A87C2FF00219721 /* SwifteriOS.framework */; };
 		59FD15C81A87C40F00219721 /* SwifteriOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 59FD15C41A87C2FF00219721 /* SwifteriOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -69,6 +70,7 @@
 		59B2133D19A8EA2200E20EC0 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		59C9ACA319A94D44008FCC3D /* StreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamViewController.swift; sourceTree = "<group>"; };
 		59C9ACA519A95137008FCC3D /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
+		59D82CA21A89DC7900C52294 /* WebHolderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebHolderViewController.swift; sourceTree = "<group>"; };
 		59E90E3A19A17A0B00CD0DB8 /* TwitterUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterUser.swift; sourceTree = "<group>"; };
 		59FD15C41A87C2FF00219721 /* SwifteriOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwifteriOS.framework; path = "../../Library/Developer/Xcode/DerivedData/CakeBird-gmwjalifkviyhhhknkjttubreylj/Build/Products/Debug-iphoneos/SwifteriOS.framework"; sourceTree = "<group>"; };
 		59FD15CA1A87C48700219721 /* LoginLandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginLandingViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				592A26CA19A0624700CC910F /* SuperViewController.swift */,
 				59C9ACA519A95137008FCC3D /* TweetCell.swift */,
 				59FD15CA1A87C48700219721 /* LoginLandingViewController.swift */,
+				59D82CA21A89DC7900C52294 /* WebHolderViewController.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				59B2133E19A8EA2200E20EC0 /* ProfileViewController.swift in Sources */,
 				59E90E3B19A17A0B00CD0DB8 /* TwitterUser.swift in Sources */,
 				59FD15CB1A87C48700219721 /* LoginLandingViewController.swift in Sources */,
+				59D82CA31A89DC7900C52294 /* WebHolderViewController.swift in Sources */,
 				592A26B0199FE8B000CC910F /* LandingViewController.swift in Sources */,
 				5941920419A9527900CF43FA /* Tweet.swift in Sources */,
 				59C9ACA619A95137008FCC3D /* TweetCell.swift in Sources */,

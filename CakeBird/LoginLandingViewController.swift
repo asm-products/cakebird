@@ -74,6 +74,16 @@ class LoginLandingViewController: SuperViewController {
   
   func loginToTwitterWeb() {
     println("No twitter login.. Web login required")
+    var storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+    var webView = storyBoard.instantiateViewControllerWithIdentifier("WebHolder") as WebHolderViewController
+
+    webView.request = NSURLRequest(URL: NSURL(string: "https://www.google.com")!)
+
+    
+    self.presentViewController(webView, animated: true) { () -> Void in
+      println("showing!")
+    }
+
   }
   
   
