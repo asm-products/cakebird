@@ -18,7 +18,10 @@ class TweetCell : UICollectionViewCell {
   @IBOutlet weak var avatarImage: UIImageView!
   @IBOutlet weak var text: UILabel!
   
+  @IBOutlet weak var replyCountLabel: UILabel!
+  @IBOutlet weak var retweetCountLabel: UILabel!
 
+  @IBOutlet weak var favoriteCountLabel: UILabel!
 
 
   

@@ -52,9 +52,10 @@ class StreamViewController: SuperViewController, UICollectionViewDataSource, UIC
   
   func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     var cell = collectionView.dequeueReusableCellWithReuseIdentifier("tweet", forIndexPath: indexPath) as TweetCell
-
-    cell.text.text = tweets[indexPath.item].text
-
+    var tweet = tweets[indexPath.item]
+    cell.text.text = tweet.text
+    cell.favoriteCountLabel.text = tweet.favoriteCount
+    cell.retweetCountLabel.text = tweet.retweetCount
     return cell
   }
   

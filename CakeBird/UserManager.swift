@@ -50,7 +50,9 @@ class UserManager {
   }
   
   class func loginFallback() {
-    
+    let path = NSBundle.mainBundle().pathForResource("TwitterSettings", ofType: "plist")!
+    var consumer = NSDictionary(contentsOfFile: path)
+    Static.swifter = Swifter(consumerKey: consumer?.objectForKey("CONSUMER_KEY") as String, consumerSecret: consumer?.objectForKey("CONSUMER_SECRET") as String)
   }
   
   class func logout() {
