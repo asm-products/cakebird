@@ -87,6 +87,7 @@ class UserManager {
   }
   
   
+  
   class func saveUser() {
     let data = NSKeyedArchiver.archivedDataWithRootObject(Static.loggedIn!)
     let defaults = NSUserDefaults.standardUserDefaults()

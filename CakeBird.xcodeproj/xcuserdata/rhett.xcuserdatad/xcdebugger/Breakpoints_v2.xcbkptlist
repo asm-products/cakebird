@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CakeBird/UserManager.swift"
-            timestampString = "445288889.019617"
+            timestampString = "445446121.459105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "sharedInstance()"
             landmarkType = "5">
          </BreakpointContent>

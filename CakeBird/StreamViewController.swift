@@ -56,6 +56,9 @@ class StreamViewController: SuperViewController, UICollectionViewDataSource, UIC
     cell.text.text = tweet.text
     cell.favoriteCountLabel.text = tweet.favoriteCount
     cell.retweetCountLabel.text = tweet.retweetCount
+    cell.screenNameLabel.text = "@bob" //tweet.author
+    cell.realNameLabel.text = "Bob" //tweet.authorName
+//    cell.authorAvatarView.image = tweet.authorAvatar
     return cell
   }
   

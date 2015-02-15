@@ -23,7 +23,10 @@ class TweetCell : UICollectionViewCell {
 
   @IBOutlet weak var favoriteCountLabel: UILabel!
 
+  @IBOutlet weak var realNameLabel: UILabel!
 
+  @IBOutlet weak var screenNameLabel: UILabel!
+  @IBOutlet weak var authorAvatarView: UIImageView!
   
   
 }
